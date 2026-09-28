@@ -6,7 +6,7 @@ app.use(express.json());
 let todos = [];
 
 app.get("/", (req, res) => {
-  res.send("🚀 DevOps Todo App is Latest1.2.3.4 Running!");
+  res.send("🚀 DevOps Todo App is Latest1.2.3.4 Running from codepipeline!");
 });
 
 app.get("/todos", (req, res) => {
