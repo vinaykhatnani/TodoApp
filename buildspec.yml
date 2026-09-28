@@ -1,0 +1,27 @@
+```yaml
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo "Build started"
+      - echo "Checking Docker version"
+      - docker --version
+
+  build:
+    commands:
+      - echo "Building Docker image"
+      - docker build -t todoapp:latest .
+
+  post_build:
+    commands:
+      - echo "Saving Docker image"
+      - docker save todoapp:latest -o todoapp.tar
+      - echo "Build completed successfully"
+
+artifacts:
+  files:
+    - appspec.yml
+    - todoapp.tar
+    - scripts/**/*
+```
